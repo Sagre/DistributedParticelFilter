@@ -1,0 +1,2 @@
+# DistributedParticelFilter
+A distributed particle filter for a network of agents that are able to measure the distance between them. Each agent keeps a particle set as a representation of the probability distribution, that represent its current belief about its position. A particle set is a set of weighted positions. Can be used for anchourless cooperative localization tasks. Refer to http://robots.stanford.edu/papers/thrun.robust-mcl.pdf for getting an idea of the concept of particle filters. This project is an extension to MCL
