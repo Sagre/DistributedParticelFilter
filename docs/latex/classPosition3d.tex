@@ -1,0 +1,203 @@
+\hypertarget{classPosition3d}{}\section{Position3d Class Reference}
+\label{classPosition3d}\index{Position3d@{Position3d}}
+
+
+{\ttfamily \#include $<$Position3d.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPosition3d_affe1574abc035f3d7586be496d87ec9b}{set\+Pos} (\hyperlink{structVector3d}{Vector3d} \&pos)
+\item 
+void \hyperlink{classPosition3d_ae80dba5689430944acafac6d51280f51}{set\+Ori} (\hyperlink{structQuaternion}{Quaternion} \&ori)
+\item 
+\hyperlink{structVector3d}{Vector3d} $\ast$ \hyperlink{classPosition3d_a4e9f764486d20a713596e7d4324f16f4}{get\+Pos} ()
+\item 
+\hyperlink{structQuaternion}{Quaternion} $\ast$ \hyperlink{classPosition3d_a57d5c31102109a08d42d2046074e6223}{get\+Ori} ()
+\item 
+void \hyperlink{classPosition3d_a2e0467a0caca224952bdd0a300cbe816}{shift} (\hyperlink{structVector3d}{Vector3d})
+\item 
+void \hyperlink{classPosition3d_afcbb1fe0cffcaae431822d44a3579f90}{rotate} (\hyperlink{structQuaternion}{Quaternion})
+\item 
+\hyperlink{classPosition3d_ab53bf1ffb4ca8e0f4ca6be7d05235600}{Position3d} (double, double, double, double, double, double, double)
+\item 
+\hyperlink{classPosition3d_a2cc343559bbf48523c343dee350c2aaa}{Position3d} (\hyperlink{structVector3d}{Vector3d} pos, \hyperlink{structQuaternion}{Quaternion} ori)
+\item 
+\hyperlink{classPosition3d_a0295a79fb99a32b699f366f5f2e5a331}{Position3d} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class taking care of a position and an orientation in a 3 dimensional space. Stores the position as 3 dimensional vector and the orientation as quaternion. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPosition3d_ab53bf1ffb4ca8e0f4ca6be7d05235600}\label{classPosition3d_ab53bf1ffb4ca8e0f4ca6be7d05235600}} 
+\index{Position3d@{Position3d}!Position3d@{Position3d}}
+\index{Position3d@{Position3d}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{Position3d()}{Position3d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Position3d\+::\+Position3d (\begin{DoxyParamCaption}\item[{double}]{x\+Pos,  }\item[{double}]{y\+Pos,  }\item[{double}]{z\+Pos,  }\item[{double}]{x\+Ori,  }\item[{double}]{y\+Ori,  }\item[{double}]{z\+Ori,  }\item[{double}]{w\+Ori }\end{DoxyParamCaption})}
+
+
+
+Constructor of a \hyperlink{classPosition3d}{Position3d} object with given coordinates and orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & x-\/\+Coordinate \\
+\hline
+{\em double} & y-\/\+Coordinate \\
+\hline
+{\em double} & z-\/\+Coordiante \\
+\hline
+{\em double} & x-\/\+Value of quaternion \\
+\hline
+{\em double} & y-\/\+Value of quaternion \\
+\hline
+{\em double} & z-\/\+Value of quaternion \\
+\hline
+{\em double} & w-\/\+Value of quaternion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_a2cc343559bbf48523c343dee350c2aaa}\label{classPosition3d_a2cc343559bbf48523c343dee350c2aaa}} 
+\index{Position3d@{Position3d}!Position3d@{Position3d}}
+\index{Position3d@{Position3d}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{Position3d()}{Position3d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Position3d\+::\+Position3d (\begin{DoxyParamCaption}\item[{\hyperlink{structVector3d}{Vector3d}}]{pos,  }\item[{\hyperlink{structQuaternion}{Quaternion}}]{ori }\end{DoxyParamCaption})}
+
+
+
+Constructor for a \hyperlink{classPosition3d}{Position3d} object with given position and orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The given position \\
+\hline
+{\em ori} & The given orientation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_a0295a79fb99a32b699f366f5f2e5a331}\label{classPosition3d_a0295a79fb99a32b699f366f5f2e5a331}} 
+\index{Position3d@{Position3d}!Position3d@{Position3d}}
+\index{Position3d@{Position3d}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{Position3d()}{Position3d()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Position3d\+::\+Position3d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for an empty \hyperlink{classPosition3d}{Position3d} object. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPosition3d_a57d5c31102109a08d42d2046074e6223}\label{classPosition3d_a57d5c31102109a08d42d2046074e6223}} 
+\index{Position3d@{Position3d}!get\+Ori@{get\+Ori}}
+\index{get\+Ori@{get\+Ori}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{get\+Ori()}{getOri()}}
+{\footnotesize\ttfamily \hyperlink{structQuaternion}{Quaternion} $\ast$ Position3d\+::get\+Ori (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the current orientation. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the quaternion that represents the current orientation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_a4e9f764486d20a713596e7d4324f16f4}\label{classPosition3d_a4e9f764486d20a713596e7d4324f16f4}} 
+\index{Position3d@{Position3d}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{get\+Pos()}{getPos()}}
+{\footnotesize\ttfamily \hyperlink{structVector3d}{Vector3d} $\ast$ Position3d\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the current 3d position. 
+
+\begin{DoxyReturn}{Returns}
+A Pointer to the current position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_afcbb1fe0cffcaae431822d44a3579f90}\label{classPosition3d_afcbb1fe0cffcaae431822d44a3579f90}} 
+\index{Position3d@{Position3d}!rotate@{rotate}}
+\index{rotate@{rotate}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Position3d\+::rotate (\begin{DoxyParamCaption}\item[{\hyperlink{structQuaternion}{Quaternion}}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Rotates the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structQuaternion}{Quaternion}} & The quaternion representing the relative rotation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_ae80dba5689430944acafac6d51280f51}\label{classPosition3d_ae80dba5689430944acafac6d51280f51}} 
+\index{Position3d@{Position3d}!set\+Ori@{set\+Ori}}
+\index{set\+Ori@{set\+Ori}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{set\+Ori()}{setOri()}}
+{\footnotesize\ttfamily void Position3d\+::set\+Ori (\begin{DoxyParamCaption}\item[{\hyperlink{structQuaternion}{Quaternion} \&}]{ori }\end{DoxyParamCaption})}
+
+
+
+Changes the orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ori} & The new orientation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_affe1574abc035f3d7586be496d87ec9b}\label{classPosition3d_affe1574abc035f3d7586be496d87ec9b}} 
+\index{Position3d@{Position3d}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{set\+Pos()}{setPos()}}
+{\footnotesize\ttfamily void Position3d\+::set\+Pos (\begin{DoxyParamCaption}\item[{\hyperlink{structVector3d}{Vector3d} \&}]{pos }\end{DoxyParamCaption})}
+
+
+
+Changes the 3d Position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The new position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPosition3d_a2e0467a0caca224952bdd0a300cbe816}\label{classPosition3d_a2e0467a0caca224952bdd0a300cbe816}} 
+\index{Position3d@{Position3d}!shift@{shift}}
+\index{shift@{shift}!Position3d@{Position3d}}
+\subsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily void Position3d\+::shift (\begin{DoxyParamCaption}\item[{\hyperlink{structVector3d}{Vector3d}}]{movement }\end{DoxyParamCaption})}
+
+
+
+Shifts the position in 3d-\/space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structVector3d}{Vector3d}} & The vector from the old position to the new position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Position3d.\+hpp\item 
+src/Position3d.\+cxx\end{DoxyCompactItemize}

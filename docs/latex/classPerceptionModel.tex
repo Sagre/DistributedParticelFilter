@@ -1,0 +1,46 @@
+\hypertarget{classPerceptionModel}{}\section{Perception\+Model Class Reference}
+\label{classPerceptionModel}\index{Perception\+Model@{Perception\+Model}}
+
+
+{\ttfamily \#include $<$Perception\+Model.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classPerceptionModel_afc775e9a90453018b5dc8935101eb8c9}{get\+Probability} (double dist, \hyperlink{structPerception}{Perception} measurement)
+\item 
+\mbox{\Hypertarget{classPerceptionModel_ad849ede6bd8200ad34370f6c33fbfaaf}\label{classPerceptionModel_ad849ede6bd8200ad34370f6c33fbfaaf}} 
+{\bfseries Perception\+Model} (\hyperlink{structPerceptionParams}{Perception\+Params} perception\+Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPerceptionModel}{Perception\+Model} class. Stores a set of parameters, passed by construction. Has to offer a get\+Probability function, that returns a value between 0 and 1 for a given measurement and a distance. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPerceptionModel_afc775e9a90453018b5dc8935101eb8c9}\label{classPerceptionModel_afc775e9a90453018b5dc8935101eb8c9}} 
+\index{Perception\+Model@{Perception\+Model}!get\+Probability@{get\+Probability}}
+\index{get\+Probability@{get\+Probability}!Perception\+Model@{Perception\+Model}}
+\subsubsection{\texorpdfstring{get\+Probability()}{getProbability()}}
+{\footnotesize\ttfamily double Perception\+Model\+::get\+Probability (\begin{DoxyParamCaption}\item[{double}]{dist,  }\item[{\hyperlink{structPerception}{Perception}}]{measurement }\end{DoxyParamCaption})}
+
+
+
+Should return a value between 0 and 1 for a given measurement and a distance. Have to be implemented on your own! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dist} & Distance between the two points the measurement was taken \\
+\hline
+{\em measurement} & The measurement. The content of a measurement has to be defined by you\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The probability of the measurement 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Perception\+Model.\+hpp\item 
+src/Perception\+Model.\+cxx\end{DoxyCompactItemize}

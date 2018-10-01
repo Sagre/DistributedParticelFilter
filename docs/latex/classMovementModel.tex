@@ -1,0 +1,48 @@
+\hypertarget{classMovementModel}{}\section{Movement\+Model Class Reference}
+\label{classMovementModel}\index{Movement\+Model@{Movement\+Model}}
+
+
+{\ttfamily \#include $<$Moving\+Model.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPosition3d}{Position3d} \hyperlink{classMovementModel_a438ac9158e809bfc0b27645c3fefd573}{get\+New\+Position} (\hyperlink{classPosition3d}{Position3d} old\+Position, \hyperlink{structVector3d}{Vector3d} shift, \hyperlink{structQuaternion}{Quaternion} rotation)
+\item 
+\mbox{\Hypertarget{classMovementModel_a44d47752a9bef345b3e6c1b1c56055e1}\label{classMovementModel_a44d47752a9bef345b3e6c1b1c56055e1}} 
+{\bfseries Movement\+Model} (\hyperlink{structMovementParams}{Movement\+Params} params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classMovementModel}{Movement\+Model} class. Stores a set of parameters. Has to offer function that returns a new position for a given starting position and a measuret movement. The returned position is based on the user defined movement model. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMovementModel_a438ac9158e809bfc0b27645c3fefd573}\label{classMovementModel_a438ac9158e809bfc0b27645c3fefd573}} 
+\index{Movement\+Model@{Movement\+Model}!get\+New\+Position@{get\+New\+Position}}
+\index{get\+New\+Position@{get\+New\+Position}!Movement\+Model@{Movement\+Model}}
+\subsubsection{\texorpdfstring{get\+New\+Position()}{getNewPosition()}}
+{\footnotesize\ttfamily \hyperlink{classPosition3d}{Position3d} Movement\+Model\+::get\+New\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{classPosition3d}{Position3d}}]{old\+Position,  }\item[{\hyperlink{structVector3d}{Vector3d}}]{shift,  }\item[{\hyperlink{structQuaternion}{Quaternion}}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Returns a new position for a given old position and a movement that the agent was suspected to do. Adapt this function such that it represents a model of the uncertainty in the movement of the agent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Position} & The position at which the agent was in the beginning \\
+\hline
+{\em shift} & The suspected shift of the position relative to the old position \\
+\hline
+{\em rotation} & The suspected rotation of the agent relative to the old orientation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new possible position according to a model that represents the uncertainty of the agent 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Moving\+Model.\+hpp\item 
+src/Moving\+Model.\+cxx\end{DoxyCompactItemize}

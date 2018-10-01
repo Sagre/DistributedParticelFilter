@@ -1,0 +1,169 @@
+\hypertarget{classParticleFilter}{}\section{Particle\+Filter Class Reference}
+\label{classParticleFilter}\index{Particle\+Filter@{Particle\+Filter}}
+
+
+{\ttfamily \#include $<$Particle\+Filter.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classParticle}{Particle} $>$ \hyperlink{classParticleFilter_af7340c9e67bf47622d45f26f85e3deeb}{get\+Particle\+Set} ()
+\item 
+void \hyperlink{classParticleFilter_a84c6ed2f699b9ec2572092ac1d473684}{print\+Particle\+Set} ()
+\item 
+void \hyperlink{classParticleFilter_a11f0ce13b31de989935d099ecd264e0f}{print\+Particle\+Set} (std\+::ofstream $\ast$log\+File)
+\item 
+void \hyperlink{classParticleFilter_aa689bbd14f073aeb1f1a9ef235afcade}{normalize} ()
+\item 
+void \hyperlink{classParticleFilter_a7cbb0bc65397e8a5a39d5ec23909e94d}{evaluate} ()
+\item 
+void \hyperlink{classParticleFilter_a88095fc284f68875a7c695503c0198ce}{add\+Movement} (\hyperlink{structVector3d}{Vector3d} shift, \hyperlink{structQuaternion}{Quaternion} rotation)
+\item 
+void \hyperlink{classParticleFilter_a40e29850234965f90555b9c21d29231f}{add\+Measurement} (std\+::vector$<$ \hyperlink{classParticle}{Particle} $>$ emitter\+Part\+Set, \hyperlink{structPerception}{Perception} measurement)
+\item 
+\hyperlink{classParticleFilter_ae4ef25720c55e31e3fef38b0323b10e8}{Particle\+Filter} (int Particle\+Count, \hyperlink{classPosition3d}{Position3d} initial\+Position, \hyperlink{structMovementParams}{Movement\+Params} movement\+Params, \hyperlink{structPerceptionParams}{Perception\+Params} perception\+Params)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that stores a vector of particles and maintains them. Can integrate movements and measurements. Upon evaluating calculates the new distribution of weights, based on all measurements stored since the last evaluation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParticleFilter_ae4ef25720c55e31e3fef38b0323b10e8}\label{classParticleFilter_ae4ef25720c55e31e3fef38b0323b10e8}} 
+\index{Particle\+Filter@{Particle\+Filter}!Particle\+Filter@{Particle\+Filter}}
+\index{Particle\+Filter@{Particle\+Filter}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{Particle\+Filter()}{ParticleFilter()}}
+{\footnotesize\ttfamily Particle\+Filter\+::\+Particle\+Filter (\begin{DoxyParamCaption}\item[{int}]{Particle\+Count,  }\item[{\hyperlink{classPosition3d}{Position3d}}]{initial\+Position,  }\item[{\hyperlink{structMovementParams}{Movement\+Params}}]{movement\+Params,  }\item[{\hyperlink{structPerceptionParams}{Perception\+Params}}]{perception\+Params }\end{DoxyParamCaption})}
+
+
+
+Constructor for a particlefilter with given initial position and the desired number of particles. The particle set is initiated with uniform distributed weights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Particle\+Count} & The desired maximum number of particles \\
+\hline
+{\em initial\+Position} & The initial position of the agent. \\
+\hline
+{\em \hyperlink{structMovementParams}{Movement\+Params}} & The parameter of the custom movement model \\
+\hline
+{\em \hyperlink{structPerceptionParams}{Perception\+Params}} & The parameter of the custom perception model\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classParticleFilter_a40e29850234965f90555b9c21d29231f}\label{classParticleFilter_a40e29850234965f90555b9c21d29231f}} 
+\index{Particle\+Filter@{Particle\+Filter}!add\+Measurement@{add\+Measurement}}
+\index{add\+Measurement@{add\+Measurement}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{add\+Measurement()}{addMeasurement()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::add\+Measurement (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{classParticle}{Particle} $>$}]{emitter\+Part\+Set,  }\item[{\hyperlink{structPerception}{Perception}}]{measurement }\end{DoxyParamCaption})}
+
+
+
+Adds a measurement to the particlefilter. This leads to a reevaluation of the particles. The weights of the particles according to the measurement are stored until a new movement is added. Then the weights of the particles are adapted according to all measurements to this time. A measurement is given as a \hyperlink{structPerception}{Perception} object. The perception structure has to be adapted to what the specific agent is able to percieve. The particles are reevaluated according to the perception model. The perception model has to calculate the probability of percieving a measurement for given positions of two agents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em emitter\+Part\+Set} & The particle Set which represents the belief about the position of the other agent \\
+\hline
+{\em measurement} & The measurement that was percieved\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticleFilter_a88095fc284f68875a7c695503c0198ce}\label{classParticleFilter_a88095fc284f68875a7c695503c0198ce}} 
+\index{Particle\+Filter@{Particle\+Filter}!add\+Movement@{add\+Movement}}
+\index{add\+Movement@{add\+Movement}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{add\+Movement()}{addMovement()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::add\+Movement (\begin{DoxyParamCaption}\item[{\hyperlink{structVector3d}{Vector3d}}]{shift,  }\item[{\hyperlink{structQuaternion}{Quaternion}}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Adds a movement of the agent and adapts the particle set. The particle set is resampled, and every particle is relocated, based on the Moving\+Model. The Moving Model returns a new position for a given previous position and a movement relativ to the old position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shift} & The supposed/meassured shift of the agent. Given as a vector from the old to the new position \\
+\hline
+{\em rotation} & The supposed/measured rotation of the agent, relative to the previous rotation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticleFilter_a7cbb0bc65397e8a5a39d5ec23909e94d}\label{classParticleFilter_a7cbb0bc65397e8a5a39d5ec23909e94d}} 
+\index{Particle\+Filter@{Particle\+Filter}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Evaluates the measuerements and adapts the weight of the particles. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticleFilter_af7340c9e67bf47622d45f26f85e3deeb}\label{classParticleFilter_af7340c9e67bf47622d45f26f85e3deeb}} 
+\index{Particle\+Filter@{Particle\+Filter}!get\+Particle\+Set@{get\+Particle\+Set}}
+\index{get\+Particle\+Set@{get\+Particle\+Set}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{get\+Particle\+Set()}{getParticleSet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classParticle}{Particle} $>$ Particle\+Filter\+::get\+Particle\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the particle set (For testing purposes!, do not edit) 
+
+\begin{DoxyReturn}{Returns}
+The current \hyperlink{classParticle}{Particle} set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticleFilter_aa689bbd14f073aeb1f1a9ef235afcade}\label{classParticleFilter_aa689bbd14f073aeb1f1a9ef235afcade}} 
+\index{Particle\+Filter@{Particle\+Filter}!normalize@{normalize}}
+\index{normalize@{normalize}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Normalizes the weights of the particle set such that they sum up to 1. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticleFilter_a84c6ed2f699b9ec2572092ac1d473684}\label{classParticleFilter_a84c6ed2f699b9ec2572092ac1d473684}} 
+\index{Particle\+Filter@{Particle\+Filter}!print\+Particle\+Set@{print\+Particle\+Set}}
+\index{print\+Particle\+Set@{print\+Particle\+Set}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{print\+Particle\+Set()}{printParticleSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Particle\+Filter\+::print\+Particle\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the current particle set to the console. For testing purposes. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticleFilter_a11f0ce13b31de989935d099ecd264e0f}\label{classParticleFilter_a11f0ce13b31de989935d099ecd264e0f}} 
+\index{Particle\+Filter@{Particle\+Filter}!print\+Particle\+Set@{print\+Particle\+Set}}
+\index{print\+Particle\+Set@{print\+Particle\+Set}!Particle\+Filter@{Particle\+Filter}}
+\subsubsection{\texorpdfstring{print\+Particle\+Set()}{printParticleSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Particle\+Filter\+::print\+Particle\+Set (\begin{DoxyParamCaption}\item[{std\+::ofstream $\ast$}]{log\+File }\end{DoxyParamCaption})}
+
+
+
+Prints the current particle set to the logfile. For testing purposes. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Particle\+Filter.\+hpp\item 
+src/Particle\+Filter.\+cxx\end{DoxyCompactItemize}

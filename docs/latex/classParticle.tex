@@ -1,0 +1,207 @@
+\hypertarget{classParticle}{}\section{Particle Class Reference}
+\label{classParticle}\index{Particle@{Particle}}
+
+
+{\ttfamily \#include $<$Particle.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classParticle_afbf844a997934d306fe689dbb9a24569}{Particle} (double x\+Pos, double y\+Pos, double z\+Pos, double x\+Ori, double y\+Ori, double z\+Ori, double w\+Ori, double w)
+\item 
+\hyperlink{classParticle_a86d9fbc48a99f8d87e3e9cb2a300a826}{Particle} (\hyperlink{structVector3d}{Vector3d}, \hyperlink{structQuaternion}{Quaternion}, double)
+\item 
+\hyperlink{classParticle_ad2efee7bc1b494a931904465e1f00dd4}{Particle} (\hyperlink{classPosition3d}{Position3d}, double)
+\item 
+\hyperlink{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}{Particle} ()
+\item 
+void \hyperlink{classParticle_a0aea1cf9a6dec45251a6c55586a7a6cc}{set\+Weight} (double)
+\item 
+double \hyperlink{classParticle_aa3394c6311c1a7d9a431d20ed565c297}{get\+Weight} ()
+\item 
+\hyperlink{classPosition3d}{Position3d} \hyperlink{classParticle_a804a757870822ba5d437310665cc0a0f}{get\+Position} ()
+\item 
+void \hyperlink{classParticle_a46c4e13f7e8d88e9747ba8ef1f974bbe}{set\+Position} (\hyperlink{classPosition3d}{Position3d} pos)
+\item 
+void \hyperlink{classParticle_a9bf0972f96de472f015c1812ae8e269d}{move} (\hyperlink{structVector3d}{Vector3d}, \hyperlink{structQuaternion}{Quaternion})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic particle class. Stores a position and a weight. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParticle_afbf844a997934d306fe689dbb9a24569}\label{classParticle_afbf844a997934d306fe689dbb9a24569}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{double}]{x\+Pos,  }\item[{double}]{y\+Pos,  }\item[{double}]{z\+Pos,  }\item[{double}]{x\+Ori,  }\item[{double}]{y\+Ori,  }\item[{double}]{z\+Ori,  }\item[{double}]{w\+Ori,  }\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+
+Constructor for a particle with given coordinates and weight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & x-\/\+Coordinate \\
+\hline
+{\em y\+Pos} & y-\/\+Coordinate \\
+\hline
+{\em z\+Pos} & z-\/\+Coordinate \\
+\hline
+{\em x\+Ori} & x-\/\+Value of the quaternion representing the orientation \\
+\hline
+{\em y\+Ori} & y-\/\+Value of the quaternion representing the orientation \\
+\hline
+{\em z\+Ori} & z-\/\+Value of the quaternion representing the orientation \\
+\hline
+{\em w\+Ori} & w-\/\+Value of the quaternion representing the orientation \\
+\hline
+{\em w} & Desired weight of the particle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_a86d9fbc48a99f8d87e3e9cb2a300a826}\label{classParticle_a86d9fbc48a99f8d87e3e9cb2a300a826}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{\hyperlink{structVector3d}{Vector3d}}]{pos,  }\item[{\hyperlink{structQuaternion}{Quaternion}}]{ori,  }\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structVector3d}{Vector3d}} & The desired position of the particle \\
+\hline
+{\em \hyperlink{structQuaternion}{Quaternion}} & The desired orientation of the particle \\
+\hline
+{\em double} & The desired weight of the particle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_ad2efee7bc1b494a931904465e1f00dd4}\label{classParticle_ad2efee7bc1b494a931904465e1f00dd4}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{\hyperlink{classPosition3d}{Position3d}}]{pos,  }\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+
+Constructor for a particle with a given Position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classPosition3d}{Position3d}} & The desired Position of the particle \\
+\hline
+{\em double} & The desired weight of the particle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classParticle}{Particle} Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}\label{classParticle_a40f4c7e248029d72e7714b7802d5e5e1}} 
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Particle\+::\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for an empty particle object. 
+
+\begin{DoxyReturn}{Returns}
+An empty particle 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classParticle_a804a757870822ba5d437310665cc0a0f}\label{classParticle_a804a757870822ba5d437310665cc0a0f}} 
+\index{Particle@{Particle}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily \hyperlink{classPosition3d}{Position3d} Particle\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the 3d Position of the \hyperlink{classParticle}{Particle}. 
+
+\begin{DoxyReturn}{Returns}
+The position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_aa3394c6311c1a7d9a431d20ed565c297}\label{classParticle_aa3394c6311c1a7d9a431d20ed565c297}} 
+\index{Particle@{Particle}!get\+Weight@{get\+Weight}}
+\index{get\+Weight@{get\+Weight}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{get\+Weight()}{getWeight()}}
+{\footnotesize\ttfamily double Particle\+::get\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current weight of the particle. 
+
+\begin{DoxyReturn}{Returns}
+The current weight 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_a9bf0972f96de472f015c1812ae8e269d}\label{classParticle_a9bf0972f96de472f015c1812ae8e269d}} 
+\index{Particle@{Particle}!move@{move}}
+\index{move@{move}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Particle\+::move (\begin{DoxyParamCaption}\item[{\hyperlink{structVector3d}{Vector3d}}]{shift,  }\item[{\hyperlink{structQuaternion}{Quaternion}}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Moves the particle to a new position and rotates it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structVector3d}{Vector3d}} & Vector from the old position to the new position \\
+\hline
+{\em \hyperlink{structQuaternion}{Quaternion}} & Rotation relative to the old orientation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_a46c4e13f7e8d88e9747ba8ef1f974bbe}\label{classParticle_a46c4e13f7e8d88e9747ba8ef1f974bbe}} 
+\index{Particle@{Particle}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}}
+{\footnotesize\ttfamily void Particle\+::set\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{classPosition3d}{Position3d}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Changes the position of the particle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The desired position of the particle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParticle_a0aea1cf9a6dec45251a6c55586a7a6cc}\label{classParticle_a0aea1cf9a6dec45251a6c55586a7a6cc}} 
+\index{Particle@{Particle}!set\+Weight@{set\+Weight}}
+\index{set\+Weight@{set\+Weight}!Particle@{Particle}}
+\subsubsection{\texorpdfstring{set\+Weight()}{setWeight()}}
+{\footnotesize\ttfamily void Particle\+::set\+Weight (\begin{DoxyParamCaption}\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+
+Changes the weight of the particle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & The desired weight\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Particle.\+hpp\item 
+src/Particle.\+cxx\end{DoxyCompactItemize}
